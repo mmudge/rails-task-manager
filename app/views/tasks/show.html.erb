@@ -1,0 +1,13 @@
+<h1>Here is your task:</h1>
+
+<h3>Title:</h3>
+  <div>  <%= @task.title %> </div>
+<h3>Details:</h3>
+  <div><%= @task.details %></div>
+<h3>Completed?</h3>
+  <div><%= @task.completed %></div>
+
+
+<div> <%= link_to "Back to List", tasks_path  %></div>
+<div> <%= link_to "Edit Task", edit_task_path  %></div>
+

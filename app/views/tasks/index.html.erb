@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Here is all of the tasks</h1>
+  <div class="list">
+    <div class="list-items">
+    <% @tasks.each do |task| %>
+      <div>
+      <p><% if task.completed == true %>
+        <%= check_box_tag(:task, task.id, true) %>
+        <% task.save! %>
+      <% else %>
+        <%= check_box_tag(:task, task.id, false) %>
+        <% task.save! %>
+      <% end %></p><p> <%= link_to task.title, task_path(task)  %></p><p> <%= link_to "", task_path(task),
+        method: :delete,
+        data: { confirm: "Are you sure?" }, class: "far fa-trash-alt"  %> </p>
+    <% end %>
+  </div>
+    </div>
+  </div>
+
+  <div>
+    <%= link_to "Add New Task", new_task_path %>
+  </div>
+
+</div>
+
